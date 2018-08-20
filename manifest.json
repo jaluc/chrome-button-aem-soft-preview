@@ -2,10 +2,35 @@
 	"name": "AEM Author Soft Preview",
 	"version": "1.0",
 	"description": "Preview currently edited page in a new Incognito window with wcmmode=disabled.",
-	"permissions": ["storage"],
+	"permissions": [
+		"activeTab",
+		"declarativeContent",
+		"storage"
+	],
 	"background": {
 		"scripts": ["background.js"],
 		"persistent": false
 	},
+	"page_action": {
+		"default_icon":{
+			// "16": "images/icon16.png",
+			"18": "images/icon18.png",
+			"24": "images/icon24.png",
+			// "32": "images/icon32.png",
+			"36": "images/icon36.png",
+			"48": "images/icon48.png"
+			// "128": "images/icon128.png"
+		},
+		"default_title": "Soft AEM Preview"
+	},
+	"icons": {
+	    // "16": "images/icon16.png",
+		"18": "images/icon18.png",
+		"24": "images/icon24.png",
+		// "32": "images/icon32.png",
+		"36": "images/icon36.png",
+		"48": "images/icon48.png"
+		// "128": "images/icon128.png"
+    },
 	"manifest_version": 2
 }
