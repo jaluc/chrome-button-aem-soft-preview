@@ -6,6 +6,7 @@ chrome.runtime.onInstalled.addListener(function(){
 		chrome.declarativeContent.onPageChanged.addRules([{
 			// That fires when:
 			conditions:[new chrome.declarativeContent.PageStateMatcher({
+				// a Page's URL indicates PL Author in Classic Mode (AEM 6.1)
 				pageUrl: {hostEquals: 'pl-aem6.upc.biz', pathPrefix: '/cf'}
 			})],
 			// And show the extension's page action
