@@ -1,27 +1,8 @@
 {
 	"name": "AEM Author Soft Preview",
 	"version": "1.0",
+	"manifest_version": 2,
 	"description": "Preview currently edited page in a new Incognito window with wcmmode=disabled.",
-	"background": {
-		"scripts": ["background.js"],
-		"persistent": false
-	},
-	"page_action": {
-		"default_icon": {
-	    "16": "images/icon16.png",
-		"24": "images/icon24.png",
-		"32": "images/icon32.png",
-		"48": "images/icon48.png",
-		"64": "images/icon64.png",
-		"128": "images/icon128.png"
-    },
-		"default_title": "Soft AEM Preview"
-	},
-	"permissions": [
-		// "activeTab",
-		"declarativeContent"
-		// "storage"
-	],
 	"icons": {
 	    "16": "images/icon16.png",
 		"24": "images/icon24.png",
@@ -30,5 +11,25 @@
 		"64": "images/icon64.png",
 		"128": "images/icon128.png"
     },
-	"manifest_version": 2
+	"page_action": {
+		"default_icon": {
+	    "16": "images/icon16.png",
+		"24": "images/icon24.png",
+		"32": "images/icon32.png",
+		"48": "images/icon48.png",
+		"64": "images/icon64.png",
+		"128": "images/icon128.png"
+		},
+		"default_title": "Soft AEM Preview"
+	},
+	"background": {
+		"scripts": ["background.js"],
+		"persistent": false
+	},
+	"permissions": [
+		"activeTab",
+		"declarativeContent",
+		"storage"
+	],
+	"incognito": "split"
 }
