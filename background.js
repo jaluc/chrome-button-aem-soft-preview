@@ -9,8 +9,12 @@ chrome.runtime.onInstalled.addListener(function(){
 				// a Page's URL indicates PL Author in Classic Mode (AEM 6.1)
 				pageUrl: {hostEquals: 'pl-aem6.upc.biz', pathPrefix: '/cf'}
 			})],
-			// And show the extension's page action
+			// And show the extension's page action (an icon in the main Chrome toolbar)
 			actions: [new chrome.declarativeContent.ShowPageAction()]
 		}]);
+		// Makes the page action do its thing when clicked :-)
+		chrome.pageAction.onClicked.addListener(function(){
+			chrome.windows.create({url: "https://google.com", incognito: true});
+		});
 	});
 });
