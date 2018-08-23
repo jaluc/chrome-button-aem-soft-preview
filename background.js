@@ -12,9 +12,20 @@ chrome.runtime.onInstalled.addListener(function(){
 			// And show the extension's page action (an icon in the main Chrome toolbar)
 			actions: [new chrome.declarativeContent.ShowPageAction()]
 		}]);
-		// Makes the page action do its thing when clicked :-)
-		chrome.pageAction.onClicked.addListener(function(){
-			chrome.windows.create({url: "https://google.com", incognito: true});
-		});
 	});
 });
+function openPreview(){
+	// Get the currently selected tab
+    chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+	    // The current tab.Tab object
+		var current = tabs[0];
+		// Extract current tab's url property
+		var newWinUrl = current.url;
+		var wcmmodeParam = "?wcmmode=disabled";
+		// Open a new incognito window containing current tab's URL
+		chrome.windows.create({url: newWinUrl, incognito: true});
+    });
+}
+
+// Set up a click handler to open a new window
+chrome.pageAction.onClicked.addListener(openPreview);
