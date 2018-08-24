@@ -1,8 +1,8 @@
 {
-	"name": "AEM Author Soft Preview",
+	"name": "AEM Author - podgląd strony",
 	"version": "1.0",
 	"manifest_version": 2,
-	"description": "Preview currently edited page in a new Incognito window with wcmmode=disabled.",
+	"description": "Ile razy można wycinać, kopiować, wklejać, kasować i wklepywać 'wuce em mode równasię disablet, fuck… led",
 	"icons": {
 	    "16": "images/icon16.png",
 		"24": "images/icon24.png",
