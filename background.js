@@ -17,13 +17,16 @@ chrome.runtime.onInstalled.addListener(function(){
 function openPreview(){
 	// Get the currently selected tab
     chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
-	    // The current tab.Tab object
-		var current = tabs[0];
-		// Extract current tab's url property
-		var newWinUrl = current.url;
-		var wcmmodeParam = "?wcmmode=disabled";
+		var current = tabs[0]; // The current tab is an object
+		// Extract url of the current tab from the tab object
+		var newUrl = current.url;
+		var addParam ="?wcmmode=disabled";
+		var findCf = /cf#\//;
+		newUrl = newUrl.replace(findCf, "");
+		newUrl = newUrl.split('?');
+		newUrl = newUrl[0]+addParam;
 		// Open a new incognito window containing current tab's URL
-		chrome.windows.create({url: newWinUrl, incognito: true});
+		chrome.windows.create({url: newUrl, incognito: true});
     });
 }
 
